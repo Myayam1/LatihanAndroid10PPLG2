@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">LatihanAndroid10PPLG2</string>
+    <string name="img_desc">Foto Persipur</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <array name="array_operation">
+        <item>Tambah</item>
+        <item>Kurang</item>
+        <item>Kali</item>
+        <item>Bagi</item>
+    </array>
+</resources>
