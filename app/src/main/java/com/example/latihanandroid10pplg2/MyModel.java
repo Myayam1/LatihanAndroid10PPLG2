@@ -2,9 +2,14 @@ package com.example.latihanandroid10pplg2;
 
 public class MyModel    {
     private String nama;
-    private String no;
-    private int imgSrc;
+    private String harga;
+    private int imgId;
 
+    public MyModel(String nama, String harga, int imgId) {
+        this.nama = nama;
+        this.harga = harga;
+        this.imgId = imgId;
+    }
 
     public String getNama() {
         return nama;
@@ -14,19 +19,19 @@ public class MyModel    {
         this.nama = nama;
     }
 
-    public String getNo() {
-        return no;
+    public String getHarga() {
+        return harga;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setHarga(String harga) {
+        this.harga = harga;
     }
 
-    public int getImgSrc() {
-        return imgSrc;
+    public int getImgId() {
+        return imgId;
     }
 
-    public void setImgSrc(int imgSrc) {
-        this.imgSrc = imgSrc;
+    public void setImgId(int imgId) {
+        this.imgId = imgId;
     }
 }

@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         logBtn = findViewById(R.id.login_btn);
         regBtn = findViewById(R.id.register_btn);
 
-        Intent calcActivity = new Intent(MainActivity.this, Kalkulator.class);
+        Intent recyclerViewActivity = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
         logBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (userInput.getText().toString().equals("admin") && pwInput.getText().toString().equals("admin")) {
-                    startActivity(calcActivity);
+                    startActivity(recyclerViewActivity);
                 } else {
                     Toast.makeText(MainActivity.this, "Login Gagal", Toast.LENGTH_SHORT).show();
                 }

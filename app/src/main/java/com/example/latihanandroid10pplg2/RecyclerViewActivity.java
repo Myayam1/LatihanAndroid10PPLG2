@@ -9,35 +9,31 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
-    RecyclerView rvmakanan;
-    ArrayList<MyModel> listmakanan;
-
+    private RecyclerView recyclerView;
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
-        listmakanan = new ArrayList<>();
-        rvmakanan = (RecyclerView)findViewById(R.id.items);
+        recyclerView = (RecyclerView)findViewById(R.id.items);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        MyModel makan1 = new MyModel();
-        makan1.setNama("Ayam Geprek");
-        makan1.setNo("RP 10.000");
-        makan1.setImgSrc(R.drawable.persipur);
-        listmakanan.add(makan1);
+        adapter = new MyAdapter(getList());
+        recyclerView.setAdapter(adapter);
+    }
 
-        MyModel makan2 = new MyModel();
-        makan2.setNama("Mie Ayam");
-        makan2.setNo("RP 8.000");
-        makan2.setImgSrc(R.drawable.logo);
-        listmakanan.add(makan2);
+    private List<MyModel> getList() {
+        List<MyModel> myModels = new ArrayList<>();
 
+        myModels.add(new MyModel("Ayam Geprek", "Rp 10.000", R.drawable.logo));
+        myModels.add(new MyModel("Nasi Goreng", "Rp 12.000", R.drawable.logo));
 
-
-        rvmakanan.setLayoutManager(new LinearLayoutManager(this));
-        rvmakanan.setAdapter(new MyAdapter(getApplicationContext(),listmakanan));
+        return myModels;
     }
 }
