@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 
-public class MyAdapter extends RecyclerView.Adapter<ViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private List<MyModel> myModels;
 
     public MyAdapter(List<MyModel> myModels) {
@@ -40,5 +42,18 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder>{
     @Override
     public int getItemCount() {
         return this.myModels.size();
+    }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvNama;
+        public TextView tvHarga;
+        public ImageView imgMakanan;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            tvNama = itemView.findViewById(R.id.tvName);
+            tvHarga = itemView.findViewById(R.id.tvno);
+            imgMakanan = itemView.findViewById(R.id.img);
+        }
     }
 }

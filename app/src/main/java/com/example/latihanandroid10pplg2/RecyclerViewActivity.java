@@ -31,8 +31,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private List<MyModel> getList() {
         List<MyModel> myModels = new ArrayList<>();
 
-        myModels.add(new MyModel("Ayam Geprek", "Rp 10.000", R.drawable.logo));
-        myModels.add(new MyModel("Nasi Goreng", "Rp 12.000", R.drawable.logo));
+        myModels.add(new MyModel("Ayam Geprek", "Rp 10.000", R.drawable.geprek_img));
+        myModels.add(new MyModel("Nasi Goreng", "Rp 12.000", R.drawable.nasgor_img));
 
         return myModels;
     }
