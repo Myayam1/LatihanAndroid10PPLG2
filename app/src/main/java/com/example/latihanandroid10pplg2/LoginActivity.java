@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText userInput, pwInput;
     Button logBtn, regBtn;
 
@@ -23,15 +23,15 @@ public class MainActivity extends AppCompatActivity {
         logBtn = findViewById(R.id.login_btn);
         regBtn = findViewById(R.id.register_btn);
 
-        Intent recyclerViewActivity = new Intent(MainActivity.this, RecyclerViewActivity.class);
+        Intent homeActivity = new Intent(LoginActivity.this, HomeActivity.class);
 
         logBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (userInput.getText().toString().equals("admin") && pwInput.getText().toString().equals("admin")) {
-                    startActivity(recyclerViewActivity);
+                    startActivity(homeActivity);
                 } else {
-                    Toast.makeText(MainActivity.this, "Login Gagal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Login Gagal", Toast.LENGTH_SHORT).show();
                 }
             }
         });

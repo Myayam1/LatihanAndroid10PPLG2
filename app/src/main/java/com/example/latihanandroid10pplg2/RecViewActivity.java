@@ -11,7 +11,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecViewActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MyAdapter adapter;
 

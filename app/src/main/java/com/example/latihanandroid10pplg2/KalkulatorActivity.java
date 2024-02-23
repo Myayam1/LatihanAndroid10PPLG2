@@ -2,16 +2,14 @@ package com.example.latihanandroid10pplg2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.widget.AdapterView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class Kalkulator extends AppCompatActivity {
+public class KalkulatorActivity extends AppCompatActivity {
 
     EditText num1, num2;
     Button btnCount;
