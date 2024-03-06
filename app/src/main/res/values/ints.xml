@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="img_ids">
+        <item>@drawable/geprek_img</item>
+        <item>@drawable/naspad_img</item>
+        <item>@drawable/nasgor_img</item>
+        <item>@drawable/myayam_img</item>
+    </integer-array>
+</resources>

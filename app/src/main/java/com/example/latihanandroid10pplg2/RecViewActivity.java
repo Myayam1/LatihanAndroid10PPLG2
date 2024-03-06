@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecViewActivity extends AppCompatActivity {
+public class RecViewActivity extends AppCompatActivity implements MyAdapter.ItemClickListener {
     private RecyclerView recyclerView;
     private MyAdapter adapter;
 
@@ -25,15 +27,31 @@ public class RecViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new MyAdapter(getList());
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
     }
 
     private List<MyModel> getList() {
         List<MyModel> myModels = new ArrayList<>();
 
-        myModels.add(new MyModel("Ayam Geprek", "Rp 10.000", R.drawable.geprek_img));
-        myModels.add(new MyModel("Nasi Goreng", "Rp 12.000", R.drawable.nasgor_img));
+        TypedArray imgIdsArr = getResources().obtainTypedArray(R.array.img_ids);
 
+        String[] foodNames = getResources().getStringArray(R.array.food_name);
+        String[] foodPrices = getResources().getStringArray(R.array.food_price);
+        int[] foodImgIds = new int[imgIdsArr.length()];
+
+        for (int i = 0; i < foodNames.length; i++) {
+            foodImgIds[i] = imgIdsArr.getResourceId(i, 0);
+
+            myModels.add(new MyModel(foodNames[i], foodPrices[i], foodImgIds[i]));
+        }
+
+        imgIdsArr.recycle();
         return myModels;
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, "You clicked " + adapter.getItem(position).getNama() + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

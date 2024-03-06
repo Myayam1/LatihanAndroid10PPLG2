@@ -12,4 +12,20 @@
         <item>Kali</item>
         <item>Bagi</item>
     </array>
+
+    <array name="food_name">
+        <item>Ayam Geprek</item>
+        <item>Nasi Padang</item>
+        <item>Nasi Goreng</item>
+        <item>Mie Ayam</item>
+    </array>
+
+    <array name="food_price">
+        <item>Rp 10.000</item>
+        <item>Rp 20.000</item>
+        <item>Rp 12.000</item>
+        <item>Rp 8.000</item>
+    </array>
+
+
 </resources>
