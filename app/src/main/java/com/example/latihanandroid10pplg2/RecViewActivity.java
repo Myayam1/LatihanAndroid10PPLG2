@@ -34,24 +34,20 @@ public class RecViewActivity extends AppCompatActivity implements MyAdapter.Item
     private List<MyModel> getList() {
         List<MyModel> myModels = new ArrayList<>();
 
-        TypedArray imgIdsArr = getResources().obtainTypedArray(R.array.img_ids);
-
         String[] foodNames = getResources().getStringArray(R.array.food_name);
         String[] foodPrices = getResources().getStringArray(R.array.food_price);
-        int[] foodImgIds = new int[imgIdsArr.length()];
+        String[] foodImgSrcs = getResources().getStringArray(R.array.food_img_src);
 
         for (int i = 0; i < foodNames.length; i++) {
-            foodImgIds[i] = imgIdsArr.getResourceId(i, 0);
 
-            myModels.add(new MyModel(foodNames[i], foodPrices[i], foodImgIds[i]));
+            myModels.add(new MyModel(foodNames[i], foodPrices[i], foodImgSrcs[i]));
         }
 
-        imgIdsArr.recycle();
         return myModels;
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "You clicked " + adapter.getItem(position).getNama() + " on row number " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "You clicked " + adapter.getItem(position).getImgSrc() + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

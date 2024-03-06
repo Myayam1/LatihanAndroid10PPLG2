@@ -27,5 +27,10 @@
         <item>Rp 8.000</item>
     </array>
 
-
+    <array name="food_img_src">
+        <item>https://thumbs.dreamstime.com/b/ayam-geprek-indonesian-food-crispy-fried-chicken-hot-spicy-sambal-chili-sauce-served-steam-rice-recipe-currently-found-215159621.jpg</item>
+        <item>https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2020/03/08/2952338668.png</item>
+        <item>https://giwang.sumselprov.go.id/api/uploads/kuliner/kuliner_168654009895837.png</item>
+        <item>https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/659/2023/09/27/Instagram-jnyfoodjournal-2-1474089729.png</item>
+    </array>
 </resources>

@@ -1,11 +1,11 @@
 package com.example.latihanandroid10pplg2;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,9 +35,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         final MyModel model = this.myModels.get(position);
         holder.tvNama.setText(model.getNama());
         holder.tvHarga.setText(model.getHarga());
-        holder.imgMakanan.setImageResource(model.getImgId());
 
-
+        Glide.with(holder.itemView.getContext())
+                .load(model.getImgSrc())
+                .placeholder(R.mipmap.ic_launcher)
+                .into(holder.imgMakanan);
     }
 
     @Override
