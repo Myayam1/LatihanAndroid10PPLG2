@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         logBtn = findViewById(R.id.login_btn);
         regBtn = findViewById(R.id.register_btn);
 
-        Intent homeActivity = new Intent(LoginActivity.this, HomeActivity.class);
+        Intent homeActivity = new Intent(LoginActivity.this, MenuActivity.class);
 
         logBtn.setOnClickListener(new View.OnClickListener() {
             @Override
